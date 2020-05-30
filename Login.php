@@ -2,7 +2,15 @@
 
 <link rel="stylesheet" type="text/css" href="login.css">
 <body> 
-
+<?php
+    $enlace = mysqli_connect("127.0.0.1", "adminBD", "rojo", "Proyecto");
+    if($enlace)
+        echo "Conexión exitosa.<br>";
+    else
+      
+        die("Conexión no exitosa.");
+    
+?>
 <div id="marco">
     <div id="tituloimagen">
         <img src="Imagenes/Fondo.jpg" alt="Avatar" class="avatar">
