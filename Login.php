@@ -2,21 +2,32 @@
 <html>
 <link rel="stylesheet" type="text/css" href="login.css">
 <body> 
-    <?php
-        // Datos para conectar a la base de datos.
-        $nombreServidor = "127.0.0.1";
-        $nombreUsuario = "adminBD";
-        $passwordBaseDeDatos = "rojo";
-        $nombreBaseDeDatos = "Proyecto";
-        // Crear conexión con la base de datos.
-        $conn =new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
-        if($conn)
-            echo "conexión exitosa.<br>";
-        else
-            die("Conexión no exitosa");
-        
 
-    ?>
+    <!-- prueba michael  -->
+    <td>
+    <form action="Somos.php" method="post">
+            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
+                <h2>Nombre</h1>
+                <h3>Codigo</h2>
+                <h2>Precio</h2>
+            
+
+            <?php
+                $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+                $result=mysqli_query($conn, $sql);
+
+                while($mostrar=mysqli_fetch_array($result)){
+                    ?>
+                    <h2><?php echo $mostrar['Nombre'] ?></h1>
+                    <h3><?php echo $mostrar['Codigo'] ?></h2>
+                    <h2><?php echo $mostrar['Precio'] ?></h2>
+                 <?php
+                }   
+                ?>
+            </button>
+            </form>
+            </td>
+
 <div id="marco">
     <div id="tituloimagen">
         <img src="Imagenes/Fondo.jpg" alt="Avatar" class="avatar">

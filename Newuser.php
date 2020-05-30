@@ -1,5 +1,14 @@
 <http>
- 
+  <?php
+      $nombre =mysqli_real_escape_string($_POST['nombre']);
+      $apellido =mysqli_real_escape_string($_POST['apellido']);
+      $mail =mysqli_real_escape_string($_POST['mail']);
+      $nombre =mysqli_real_escape_string($_POST['unam']);
+      $nombre =mysqli_real_escape_string($_POST['uname']);
+      $nombre =mysqli_real_escape_string($_POST['uname']);
+
+
+  ?>
   <head lang="en">
     <meta charset="UTF-8">
     <title>H&B/Newuser</title>
