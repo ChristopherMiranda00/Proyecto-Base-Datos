@@ -1,0 +1,174 @@
+/* Los tipos de letra no estándar hay que importarlos */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Oswald&display=swap');
+
+body {
+    margin: 0px;
+}   
+div.cabecera { 
+    min-height: 70px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color:red;
+}
+.botonlogo{
+    text-decoration: none;
+    font-family: 'Grand Hotel', cursive;  
+    font-weight: 800;
+    font-size: 40px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+
+}
+.botoncuenta{
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;  
+    font-weight: 800;
+    font-size: 30px;
+    text-align-last: right;
+    color: rgb(255, 255, 255);
+
+}
+.menu{
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    min-height: 60px;  
+    border: 1px solid #333; /*anchura, estilo y color borde*/
+    text-align: center;
+}
+.botonmenu{
+    background-color: #ffffff; /*color botón*/
+    color: #666666; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    font-family: 'Oswald', sans-serif; /*tipografía texto*/
+    text-align: center;
+}
+.anuncio{
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding-left: 100px;
+}
+
+.letrero{
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: rgb(255, 0, 0);
+    text-align: left;
+    padding-left: 100px;
+}
+.mveh h1{
+    color:rgb(255, 0, 0);
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+.mveh h2{
+    color:#333;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+.contenido {
+    text-align: center;
+    border: 5px;
+
+}
+.contenido h3{
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+.contenido h2{
+    color:rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+.contenido img{
+    width: 90px;
+    text-align: center;
+}
+#cuerpo{
+    max-width: 1100px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#prod {
+    float: right;
+    width: 65%;
+}
+#prod img {
+    width: 60%;
+}
+#prod h2{
+    color:rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+#prod h3{
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+#barra-lateral {
+    padding-top: 5px;
+    float: left;
+    width: 30%;
+}
+#barra-lateral h1 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: red;
+    background-size: auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+
+}
+#barra-lateral h3{
+    color: rgb(255, 0, 0);
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+#barra-lateral h2{
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    text-align: left;
+}
+.casipie{
+    clear: both;
+    background-color: rgb(104, 104, 104);
+    min-height: 50px;
+    padding: 5px;      
+    text-align: center;
+    color: rgb(255, 255, 255); 
+    font-family: 'Oswald', sans-serif; /*tipografía texto*/
+    text-align: center;
+    font-size: 15px;
+}  
+.casipie h1{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
+}
+.botoncontacto{
+    text-decoration: none;
+    
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+.pie {
+    clear: both;
+    background-color: rgb(54, 54, 54);
+    min-height: 50px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(255, 255, 255)
+}
+
+
