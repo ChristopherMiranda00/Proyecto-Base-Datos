@@ -2,21 +2,21 @@
 <html>
 <link rel="stylesheet" type="text/css" href="login.css">
 <body> 
-<?php
-    // Datos para conectar a la base de datos.
-    $nombreServidor = "127.0.0.1";
-    $nombreUsuario = "adminBD";
-    $passwordBaseDeDatos = "rojo";
-    $nombreBaseDeDatos = "Proyecto";
-    // Crear conexión con la base de datos.
-    $conn =new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
-    if($conn)
-        echo "conexión exitosa.<br>";
-    else
-        die("Conexión no exitosa");
+    <?php
+        // Datos para conectar a la base de datos.
+        $nombreServidor = "127.0.0.1";
+        $nombreUsuario = "adminBD";
+        $passwordBaseDeDatos = "rojo";
+        $nombreBaseDeDatos = "Proyecto";
+        // Crear conexión con la base de datos.
+        $conn =new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
+        if($conn)
+            echo "conexión exitosa.<br>";
+        else
+            die("Conexión no exitosa");
+        
 
-?>
-
+    ?>
 <div id="marco">
     <div id="tituloimagen">
         <img src="Imagenes/Fondo.jpg" alt="Avatar" class="avatar">
