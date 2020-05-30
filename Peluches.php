@@ -1,3 +1,8 @@
+<?php
+require 'connection.php';
+?>
+
+
 <!DOCTYPE html>
     <html>
     <head lang="en">
@@ -31,15 +36,24 @@
         <div id="prod">    
         <table  align="center" CELLSPACING="10" > 
             <tr>
-                <td> 
-                <form action="Somos.php" method="post">
-                <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                    <h2>Peluchon chidote</h1>
-                    <h3>Código 1234</h2>
-                    <h2>$700.00</h2>
-                </button>
-                </form> 
-                </td>
+            <td>
+            <form action="Somos.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
                 <td> 
                 <form action="Somos.php" method="post">
                 <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>

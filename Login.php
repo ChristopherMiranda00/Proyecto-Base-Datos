@@ -1,4 +1,6 @@
-<?php session_start(); ?> 
+<?php session_start(); 
+require 'connection.php';
+?>?> 
 <html>
 <link rel="stylesheet" type="text/css" href="login.css">
 <body> 
@@ -7,11 +9,6 @@
     <td>
     <form action="Somos.php" method="post">
             <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Nombre</h1>
-                <h3>Codigo</h2>
-                <h2>Precio</h2>
-            
-
             <?php
                 $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
                 $result=mysqli_query($conn, $sql);
