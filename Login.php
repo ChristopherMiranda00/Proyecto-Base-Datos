@@ -1,17 +1,9 @@
+<?php session_start(); ?> 
 <html>
-
 <link rel="stylesheet" type="text/css" href="login.css">
 <body> 
 <?php
-/*     $enlace = mysqli_connect("127.0.0.1", "adminBD", "rojo", "Proyecto");
-    if($enlace)
-        echo "Conexión exitosa.<br>";
-    else
-      
-        die("Conexión no exitosa.");
-     */
     // Datos para conectar a la base de datos.
-    //session_start();
     $nombreServidor = "127.0.0.1";
     $nombreUsuario = "adminBD";
     $passwordBaseDeDatos = "rojo";
