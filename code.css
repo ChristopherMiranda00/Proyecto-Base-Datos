@@ -44,6 +44,7 @@ div.cabecera {
     text-decoration: none; /*decoración texto*/
     font-family: 'Oswald', sans-serif; /*tipografía texto*/
     text-align: center;
+    font-size: 25pt;
 }
 .anuncio{
     font-family: 'Oswald', sans-serif;
@@ -175,6 +176,31 @@ div.cabecera {
     text-align: center;
     color: rgb(255, 255, 255)
 }
+.productostabla{
+    border-collapse: collapse;
+    font-size: 15pt;
+    padding: 10px;
+    width: 100%;       
+}
+table th{
+    text-align:left;
+    padding: 10px;
+    background: #1212;
+    color:black;
+}
+
+
+.productostr:ntn-child(){
+    background: #B72333;
+}
+.product_img img{
+    width: 150px;
+    height:auto;
+    margin:auto;
+    
+}
+
+
 
 
 

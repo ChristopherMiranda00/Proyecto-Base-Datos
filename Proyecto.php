@@ -1,6 +1,9 @@
 <?php
 session_start();
-$usuario=$_SESSION['username'];
+$usuario=" ";
+if((isset($_SESSION['username']))){
+    $usuario=$_SESSION['username'];
+}
 require 'connection.php';
 ?>
 <!DOCTYPE html>
@@ -43,7 +46,7 @@ require 'connection.php';
             <form action="Oso1.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p1.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 4";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -61,7 +64,7 @@ require 'connection.php';
             <form action="Flor1.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/f1.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 121";
+                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 121";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -79,7 +82,7 @@ require 'connection.php';
             <form action="Golosina1.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/g1.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 211";
+                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 211";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -97,7 +100,7 @@ require 'connection.php';
             <form action="Oso2.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p3.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 111";
+                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 111";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -117,7 +120,7 @@ require 'connection.php';
             <form action="Flor2.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/f2.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 131";
+                        $sql= "SELECT * FROM PProyectoFinal4.Producto where Codigo = 131";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){

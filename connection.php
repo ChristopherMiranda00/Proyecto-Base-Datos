@@ -1,5 +1,6 @@
 <?php
         // Datos para conectar a la base de datos.
+
         $nombreServidor = "127.0.0.1:3306";
         $nombreUsuario = "adminBD";
         $passwordBaseDeDatos = "guardias5522";
