@@ -1,7 +1,7 @@
 <?php 
 session_start();
-  if (isset($_SESSION['user_id'])) {
-    header('Location: /php-login');
+  if (isset($_SESSION['username'])) {
+    header("location: ../Proyecto-Base-Datos/Proyecto.php");
   }
 require 'connection.php';
 
@@ -9,7 +9,6 @@ require 'connection.php';
       $nombre=$_POST['user'];
       $password=$_POST['password'];
       $query=mysqli_query($conn,"SELECT ID_Usuario,Password FROM Usuario where ID_Usuario='".$nombre."' and Password='".$password."' ");
-      //Probablemente se tengan que cambiar las mayusculas en las tablas aqui----
       $nr =mysqli_num_rows($query);
       $mensaje='';
       if($nr==0){
