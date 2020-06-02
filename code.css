@@ -72,23 +72,23 @@ div.cabecera {
     font-size: 30px;
     text-align: center;
 }
-.contenido {
+#contenido {
     text-align: center;
     border: 5px;
 
 }
-.contenido h3{
+#contenido h3{
     color: #333;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
 }
-.contenido h2{
+#contenido h2{
     color:rgb(0, 0, 0);
     font-family: 'Oswald', sans-serif;
     font-size: 30px;
 }
-.contenido img{
-    width: 90px;
+#contenido img{
+    width: 200px;
     text-align: center;
 }
 

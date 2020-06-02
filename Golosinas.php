@@ -138,6 +138,7 @@ require 'connection.php';
                             <h2><?php echo $mostrar['Precio'] ?></h2>
                         <?php
                         }   
+                    
                         ?>
                     </button>
                     </form>

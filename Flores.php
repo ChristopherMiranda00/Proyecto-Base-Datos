@@ -35,7 +35,7 @@ require 'connection.php';
             <tr>
             <td>
             <form action="Producto.php" method="post">
-                    <button type="submit" name="estado" value='1'><img src="Imagenes/f1.png"/>
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f1.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 121";
                         $result=mysqli_query($conn, $sql);

@@ -38,7 +38,7 @@ require 'connection.php';
             <tr>
             <td>
             <form action="Producto.php" method="post">
-                    <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/p1.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
                         $result=mysqli_query($conn, $sql);
@@ -94,7 +94,7 @@ require 'connection.php';
             <tr>
             <td>
             <form action="Producto.php" method="post">
-                    <button type="submit" name="estado" value='1'><img src="Imagenes/p7.jpg"/>
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/p4.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 113";
                         $result=mysqli_query($conn, $sql);
