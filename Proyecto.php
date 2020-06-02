@@ -1,4 +1,6 @@
 <?php
+session_start();
+$usuario=$_SESSION['username'];
 require 'connection.php';
 ?>
 <!DOCTYPE html>
@@ -15,9 +17,10 @@ require 'connection.php';
             <td><a class="botonlogo" href="Proyecto.php" target="_self">H&B </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
             <td><a class="botoncuenta" href="Login.php" target="_self">Mi Cuenta▾</a></td>
             </tr>
+            
         </table>
     </div><!-- fincabecera-->
-
+    
     <div class="menu" >   <!-- incio menu-->
         <table align="center"> 
         <tr>
@@ -30,7 +33,7 @@ require 'connection.php';
     </div><!-- fin menu-->
 
     <div class="anuncio">  <!-- incio anuncio--> 
-        <h1>Lo Más Vendido!</h1>
+        <?php echo "<h1>Bienvenido $usuario </h1>";?>
     </div><!-- fin anuncio-->
         
     <div class="contenido">  <!-- incio contenido-->   
@@ -40,7 +43,7 @@ require 'connection.php';
             <form action="Producto.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 4";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -58,7 +61,7 @@ require 'connection.php';
             <form action="Producto.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p3.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 111";
+                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 111";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -76,7 +79,7 @@ require 'connection.php';
             <form action="Producto.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p2.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 112";
+                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 112";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
