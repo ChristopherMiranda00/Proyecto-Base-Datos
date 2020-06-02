@@ -22,20 +22,20 @@ require 'connection.php';
         <table align="center"> 
         <tr>
         <td><a class="botonmenu" href="Peluches.php" target="_self">Peluches▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><a class="botonmenu" href="Regalos.php" target="_self">Regalos▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Flores.php" target="_self">Flores▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Golosinas.php" target="_self">Golosinas▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         </tr>
         </table>
     </div><!-- fin menu-->
 
+
     <div id="cuerpo">
         <div id="prod">    
         <table  align="center" CELLSPACING="10" > 
             <tr>
             <td>
-            <form action="Producto.php" method="post">
-                    <button type="submit" name="estado" value='1'><img src="Imagenes/f1.png"/>
+            <form action="Flor1.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f1.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 121";
                         $result=mysqli_query($conn, $sql);
@@ -52,7 +52,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor2.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/f2.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 131";
@@ -70,7 +70,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor3.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/f3.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 141";
@@ -90,7 +90,7 @@ require 'connection.php';
             </tr>  
             <tr>
             <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor4.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/f4.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 151";
@@ -108,7 +108,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor5.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/f5.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 161";
@@ -126,7 +126,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor6.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/f6.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 171";

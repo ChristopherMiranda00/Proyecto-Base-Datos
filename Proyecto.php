@@ -25,25 +25,25 @@ require 'connection.php';
         <table align="center"> 
         <tr>
         <td><a class="botonmenu" href="Peluches.php" target="_self">Peluches▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><a class="botonmenu" href="Regalos.php" target="_self">Regalos▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Flores.php" target="_self">Flores▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Golosinas.php" target="_self">Golosinas▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         </tr>
         </table>
     </div><!-- fin menu-->
 
+
     <div class="anuncio">  <!-- incio anuncio--> 
         <?php echo "<h1>Bienvenido $usuario </h1>";?>
     </div><!-- fin anuncio-->
         
-    <div class="contenido">  <!-- incio contenido-->   
+    <div id="contenido">  <!-- incio contenido-->   
         <table  align="center" CELLSPACING="10" > 
         <tr>
         <td>
-            <form action="Producto.php" method="post">
-                    <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
+            <form action="Oso1.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/p1.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 4";
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -58,10 +58,46 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor1.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f1.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 121";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Golosina1.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/g1.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 211";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Oso2.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p3.jpg"/>
                     <?php
-                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 111";
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 111";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -75,38 +111,103 @@ require 'connection.php';
                     </button>
                     </form>
                     </td>
-                    <td>
-            <form action="Producto.php" method="post">
-                    <button type="submit" name="estado" value='1'><img src="Imagenes/p2.jpg"/>
-                    <?php
-                        $sql= "SELECT * FROM ProyectoFinal4.Producto where Codigo = 112";
-                        $result=mysqli_query($conn, $sql);
-
-                        while($mostrar=mysqli_fetch_array($result)){
-                            ?>
-                            <h2><?php echo $mostrar['Nombre'] ?></h1>
-                            <h3><?php echo $mostrar['Codigo'] ?></h2>
-                            <h2><?php echo $mostrar['Precio'] ?></h2>
-                        <?php
-                        }   
-                        ?>
-                    </button>
-                    </form>
-                    </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
         </tr>  
         <tr>
         <td>
-            <form action="Producto.php" method="post">
-                    <button type="submit" name="estado" value='1'><img src="Imagenes/p7.jpg"/>
+            <form action="Flor2.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f2.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 131";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Golosina2.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/g4.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 311";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Oso3.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/p2.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 112";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Flor3.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f3.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 131";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+        </tr> 
+        <tr>
+        <td>
+            <form action="Golosina3.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/g6.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 411";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+            <td>
+            <form action="Oso4.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/p4.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 113";
                         $result=mysqli_query($conn, $sql);
@@ -123,7 +224,45 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor4.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f4.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 151";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Golosina4.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/g2.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 511";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+        </tr> 
+        <tr>
+        <td>
+            <form action="Oso5.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p6.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 114";
@@ -141,7 +280,43 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Flor5.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f5.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 161";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Golosina5.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/g3.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 611";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+            <td>
+            <form action="Oso6.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p5.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 115";
@@ -158,208 +333,55 @@ require 'connection.php';
                     </button>
                     </form>
                     </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-        </tr> 
-        <tr>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2></button>
-            </form>
-                
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-        </tr> 
-        <tr>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2></button>
-            </form>
-                
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
         </tr> 
          <tr>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2></button>
-            </form>
-                
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-        </tr> 
-        <tr>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2></button>
-            </form>
-                
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-        </tr> 
-        <tr>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2></button>
-            </form>
-                
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td>
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
-            <td> 
-            <form action="Somos.php" method="post">
-            <button type="submit" name="estado" value='1'><img src="Imagenes/panda.jpg"/>
-                <h2>Peluchon chidote</h1>
-                <h3>Código 1234</h2>
-                <h2>$700.00</h2>
-            </button>
-            </form>
-            </td> 
+         <td>
+            <form action="Flor6.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/f6.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 171";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+                    <td>
+            <form action="Golosina6.php" method="post">
+                    <button type="submit" name="estado" value='1'><img src="Imagenes/g5.jpg"/>
+                    <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 711";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Nombre'] ?></h1>
+                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Precio'] ?></h2>
+                        <?php
+                        }   
+                        ?>
+                    </button>
+                    </form>
+                    </td>
+            <td>
+            
+                    </td>
+                    <td>
+                    </td
+            
+            
         </tr> 
         </table> 
     </div><!-- fin contenido-->
+
 
     <div class = "casipie"><!-- incio casipie-->
         <table align="center" CELLSPACING="5" >
