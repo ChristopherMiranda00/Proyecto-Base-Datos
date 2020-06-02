@@ -24,7 +24,6 @@ require 'connection.php';
         <table align="center"> 
         <tr>
         <td><a class="botonmenu" href="Peluches.php" target="_self">Peluches▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><a class="botonmenu" href="Regalos.php" target="_self">Regalos▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Flores.php" target="_self">Flores▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Golosinas.php" target="_self">Golosinas▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         </tr>
@@ -37,7 +36,7 @@ require 'connection.php';
         <table  align="center" CELLSPACING="10" > 
             <tr>
             <td>
-            <form action="Producto.php" method="post">
+            <form action="Oso1.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p1.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
@@ -45,8 +44,8 @@ require 'connection.php';
 
                         while($mostrar=mysqli_fetch_array($result)){
                             ?>
-                            <h2><?php echo $mostrar['Nombre'] ?></h1>
-                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Nombre'] ?></h2>
+                            <h3><?php echo $mostrar['Codigo'] ?></h3>
                             <h2><?php echo $mostrar['Precio'] ?></h2>
                         <?php
                         }   
@@ -55,7 +54,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Oso2.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p3.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 111";
@@ -63,8 +62,8 @@ require 'connection.php';
 
                         while($mostrar=mysqli_fetch_array($result)){
                             ?>
-                            <h2><?php echo $mostrar['Nombre'] ?></h1>
-                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Nombre'] ?></h2>
+                            <h3><?php echo $mostrar['Codigo'] ?></h3>
                             <h2><?php echo $mostrar['Precio'] ?></h2>
                         <?php
                         }   
@@ -73,7 +72,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Oso3.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p2.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 112";
@@ -81,8 +80,8 @@ require 'connection.php';
 
                         while($mostrar=mysqli_fetch_array($result)){
                             ?>
-                            <h2><?php echo $mostrar['Nombre'] ?></h1>
-                            <h3><?php echo $mostrar['Codigo'] ?></h2>
+                            <h2><?php echo $mostrar['Nombre'] ?></h2>
+                            <h3><?php echo $mostrar['Codigo'] ?></h3>
                             <h2><?php echo $mostrar['Precio'] ?></h2>
                         <?php
                         }   
@@ -93,7 +92,7 @@ require 'connection.php';
             </tr>  
             <tr>
             <td>
-            <form action="Producto.php" method="post">
+            <form action="Oso4.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p4.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 113";
@@ -111,7 +110,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Oso5.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p6.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 114";
@@ -129,7 +128,7 @@ require 'connection.php';
                     </form>
                     </td>
                     <td>
-            <form action="Producto.php" method="post">
+            <form action="Oso6.php" method="post">
                     <button type="submit" name="estado" value='1'><img src="Imagenes/p5.jpg"/>
                     <?php
                         $sql= "SELECT * FROM Proyecto.producto where Codigo = 115";

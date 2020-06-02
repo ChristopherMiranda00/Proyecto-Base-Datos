@@ -19,12 +19,12 @@
         <table align="center"> 
         <tr>
         <td><a class="botonmenu" href="Peluches.php" target="_self">Peluches▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><a class="botonmenu" href="Regalos.php" target="_self">Regalos▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Flores.php" target="_self">Flores▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Golosinas.php" target="_self">Golosinas▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         </tr>
         </table>
     </div><!-- fin menu-->
+
         
     <div class="letrero">  <!-- incio anuncio--> 
         <h1>¿Quiénes Somos?</h1>

@@ -1,3 +1,6 @@
+<?php
+require 'connection.php';
+?>
 <!DOCTYPE html>
     <html>
     <head lang="en">
@@ -19,43 +22,57 @@
         <table align="center"> 
         <tr>
         <td><a class="botonmenu" href="Peluches.php" target="_self">Peluches▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><a class="botonmenu" href="Regalos.php" target="_self">Regalos▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Flores.php" target="_self">Flores▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><a class="botonmenu" href="Golosinas.php" target="_self">Golosinas▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
         </tr>
         </table>
     </div><!-- fin menu-->
 
+
     <div id="cuerpo">
         <div id="prod">    
             <table align="center" CELLSPACING="5">
                 <tr>
                     <td>
-                    
-                <img src="Imagenes/panda.jpg"/>
-                    
-                 
+   
+                <img src="Imagenes/p1.jpg"/>
+
                     </td>
                 </tr>
                 <tr>
                 <td>
-                    <h1> Descripción</h1>
-                    <h2>fnvoaenvouernv iqerngoi´qrngo
-                        rojrn ojrn oqrnwnrqn qr
-                        qojrg ojqrv oqv WLVNOANRNRNVNVNVOQNVOWRNVORNVOQNVOIVNORNV
-                    </h2>
+                <h1> Descripción</h1>
+                <?php
+                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+                        $result=mysqli_query($conn, $sql);
+
+                        while($mostrar=mysqli_fetch_array($result)){
+                            ?>
+                            <h2><?php echo $mostrar['Descripcion'] ?></h1>
+                        <?php
+                        }   
+                        ?>
                     <td>
                 </tr>
             </table>            
         </div>
         <div id="barra-lateral">
-        <h2>Peluchon chidote</h1>
-        <h3>Código 1234</h2>
-        <h2>$700.00</h2><hr>
-        <h2>Opciones de Pago</h2>
-        <h3>Tarjeta</h3><hr>
-        <h2>Añadir a la canasta
-        
+        <?php
+        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+        $result=mysqli_query($conn, $sql);
+
+        while($mostrar=mysqli_fetch_array($result)){
+          ?>
+        <h1><?php echo $mostrar['Nombre'] ?></h1>
+        <h2><?php echo $mostrar['Codigo'] ?></h2>
+        <h2><?php echo $mostrar['Precio'] ?></h2><hr>
+        <?php
+        }   
+          ?>
+        <h3>Opciones de Pago</h3>
+        <h2>Tarjeta</h2><hr><br>
+        <a class="Anadir" href="Proyecto.php" target="_self">Añadir a la canasta</a> <br><br>
+        <br><br>
                 
         </div>
     </div>
