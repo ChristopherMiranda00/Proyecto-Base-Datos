@@ -108,19 +108,19 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¿Cómo comprar?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
-                <td><a class="botoncontacto" href="https://www.facebook.com/" target="_blank">Abraham García </a></td>
-                <td>A01022398@itesm.mx</td>
+                <td><a class="botoncontacto" href="https://www.instagram.com/rojito22/" target="_blank">Abraham García </a></td>
+                <td>A01023256@itesm.mx</td>
                 <td>¿Qué es esto?</td>
                 <td>55-43-92-14-55</td>
             </tr>
             <tr>
-                <td><a class="botoncontacto" href="https://www.facebook.com/" target="_blank">Chistopher Miranda </a></td>
-                <td>A01022398@itesm.mx</td>
+                <td><a class="botoncontacto" href="https://www.instagram.com/chris_mirvan/" target="_blank">Chistopher Miranda </a></td>
+                <td>A01022676@itesm.mx</td>
                 <td>Métodos de Pago</td>
                 <td>Preguntas Frecuentes</td>
             </tr>
             <tr>
-                <td><a class="botoncontacto" href="https://www.facebook.com/" target="_blank">Miguel Hernández </a></td>
+                <td><a class="botoncontacto" href="https://www.instagram.com/miguel77hm/" target="_blank">Miguel Hernández </a></td>
                 <td>A01022398@itesm.mx</td>
                 <td>Dudas y Sugerencias</td>
                 <td></td>
