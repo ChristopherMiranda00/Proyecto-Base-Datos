@@ -20,7 +20,7 @@ require 'connection.php';
         $tel = $_POST['tel'];
         $fecha = $_POST['fecha'];
 
-        $query_insert = mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Usuario` (`ID_Usuario`, `Password`, `Nombre`, `Apellido`, `Mail`,`Direccion`, `Telefono`, `Fecha_nacimiento`,`Puesto`,`Admin`) VALUES ('$idUsuario ', '$password', '$nombre', '$apellido', '$mail', '$direc', '$tel','$fecha','TI',0)");
+        $query_insert = mysqli_query($conn,"INSERT INTO `id13938824_basedatos`.`Usuario` (`ID_Usuario`, `Password`, `Nombre`, `Apellido`, `Mail`,`Direccion`, `Telefono`, `Fecha_nacimiento`,`Puesto`,`Admin`) VALUES ('$idUsuario ', '$password', '$nombre', '$apellido', '$mail', '$direc', '$tel','$fecha','TI',0)");
         if($query_insert){
             echo "BEN";
         }

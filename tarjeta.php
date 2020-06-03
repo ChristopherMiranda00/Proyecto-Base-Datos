@@ -1,7 +1,7 @@
 <?php
 session_start();
   if (!isset($_SESSION['username'])) {
-    header("location: ../Proyecto-Base-Datos/Newuser.php");
+    //header("location: ../Proyecto-Base-Datos/Newuser.php");
   }
   require 'connection.php';
      if(!empty($_POST['nombre'])){
@@ -18,13 +18,13 @@ session_start();
          echo" ";
         echo $nombre ;
          
-         $registro="INSERT INTO `ProyectoFinal4`.`Tarjeta` (`Usuario_Tarjeta`, `No_Tarjeta`, `Nombre_Tarjeta`, `Fecha_Expiracion`, `CVV`) VALUES (? , ?, ?, ?, ?);";
+         $registro="INSERT INTO `id13938824_basedatos`.`Tarjeta` (`Usuario_Tarjeta`, `No_Tarjeta`, `Nombre_Tarjeta`, `Fecha_Expiracion`, `CVV`) VALUES (? , ?, ?, ?, ?);";
          
          $sentencia= mysqli_prepare($conn,$registro);
          mysqli_stmt_bind_param($sentencia,'sssss',$usr,$num,$nombre,$fecha,$ccv);
          $pass=mysqli_stmt_execute($sentencia);
          if($pass){
-              header("location: ../Proyecto-Base-Datos/carrito.php");
+              header("location:carrito.php");
          }
      }
 ?>

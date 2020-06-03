@@ -22,12 +22,12 @@ if(!empty($_POST["pagar"])){
         while($carro=mysqli_fetch_array($query)){
             $cod=$carro["Codigo"];
             $can=$carro["Cantidad"];
-            $as=mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Producto_has_Venta` (`Codigo_Producto`,  `Num_venta`, `Cantidad`, `Total`, `Codigo_Carrito`) VALUES ($cod, 1, $can,$total,'$usuario');");
+            $as=mysqli_query($conn,"INSERT INTO `id13938824_basedatos`.`Producto_has_Venta` (`Codigo_Producto`,  `Num_venta`, `Cantidad`, `Total`, `Codigo_Carrito`) VALUES ($cod, 1, $can,$total,'$usuario');");
                
         }
         if($as){
             echo "YASTAS";
-                $ne=mysqli_query($conn,"delete from `ProyectoFinal4`.`Carrito_has_Producto` where (Usuario_ID_Usuario = '$usuario');");
+                $ne=mysqli_query($conn,"delete from `id13938824_basedatos`.`Carrito_has_Producto` where (Usuario_ID_Usuario = '$usuario');");
             }
   
     }

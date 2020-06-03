@@ -22,7 +22,7 @@ if(!empty($_POST)){
         //echo"fa";
          header('Location: Login.php');
     }
-    $van=mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Carrito_has_Producto` (`Cantidad`, `Codigo_Producto`, `Total`, `Usuario_ID_Usuario`) VALUES (1, $codigo, $precio, '$usuario');");  
+    $van=mysqli_query($conn,"INSERT INTO `id13938824_basedatos`.`Carrito_has_Producto` (`Cantidad`, `Codigo_Producto`, `Total`, `Usuario_ID_Usuario`) VALUES (1, $codigo, $precio, '$usuario');");  
 }
 
 ?>

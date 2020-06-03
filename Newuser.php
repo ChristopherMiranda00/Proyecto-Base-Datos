@@ -34,7 +34,7 @@ require 'connection.php';
             else{
                 echo "aqui";
                 mysqli_stmt_close($sentencia);
-                $insert= "INSERT INTO `ProyectoFinal4`.`Usuario` (`ID_Usuario`, `Password`, `Nombre`, `Apellido`, `Mail`, `Direccion`, `Telefono`, `Fecha_nacimiento`, `Admin`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,0);";
+                $insert= "INSERT INTO `id13938824_basedatos`.`Usuario` (`ID_Usuario`, `Password`, `Nombre`, `Apellido`, `Mail`, `Direccion`, `Telefono`, `Fecha_nacimiento`, `Admin`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,0);";
                 $sentencia =mysqli_prepare($conn, $insert);
                 mysqli_stmt_bind_param($sentencia, 'ssssssss',$user,$pass,$nombre,$apellido,$mail,$direccion,$telefono,$fecha);
                 $verify=mysqli_stmt_execute($sentencia);
@@ -44,7 +44,7 @@ require 'connection.php';
                 }
                 else{
                     mysqli_query($conn,);
-                    header("location: ../Proyecto-Base-Datos/Login.php");
+                    header("location: Login.php");
                 }
             }
             

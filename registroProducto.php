@@ -25,6 +25,6 @@ require 'connection.php';
 
         </div>
     </form>
-    <div id="marco">  
+    </div>  
 </body>
 </html>

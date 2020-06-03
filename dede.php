@@ -34,7 +34,7 @@ require 'connection.php';
             else{
                 echo "aqui";
                 mysqli_stmt_close($sentencia);
-                $insert= "INSERT INTO `ProyectoFinal4`.`producto` (`Codigo`, `Nombre`, `Dscripcion`, `Precio`, `Tipo`, `Disponibilidad`) VALUES (?, ?, ?, ?, ?, ?);";
+                $insert= "INSERT INTO `id13938824_basedatos`.`producto` (`Codigo`, `Nombre`, `Dscripcion`, `Precio`, `Tipo`, `Disponibilidad`) VALUES (?, ?, ?, ?, ?, ?);";
                 $sentencia =mysqli_prepare($conn, $insert);
                 mysqli_stmt_bind_param($sentencia, 'ssssssss',$user,$pass,$nombre,$apellido,$mail,$direccion,$telefono,$fecha);
                 $verify=mysqli_stmt_execute($sentencia);
@@ -43,7 +43,7 @@ require 'connection.php';
                     $mensaje="ERROR: Verifica el formato de los datos";
                 }
                 else{
-                    header("location: ../Proyecto-Base-Datos/Login.php");
+                    header("location: Login.php");
                 }
             }
             
