@@ -7,11 +7,11 @@ if((isset($_SESSION['username']))){
 require 'connection.php';
 
 
-    if(empty($_POST["Codigo"]){
+    if(empty($_POST["Codigo"])){
         $alert='<p class = "msg_error">Todos los campos son obligatorios.</p>';
     }else{
         $alert='<p class = "msg_error">BIEN.</p>';
-        
+    
         $codigo = $_POST['Codigo'];
         $nombre = $_POST['Nombre'];
         $descripcion = $_POST['Descripcion'];
@@ -20,18 +20,16 @@ require 'connection.php';
         $disponibilidad = $_POST['Disponibilidad'];
        echo $codigo;
        echo $nombre;
-       
-    
-
-
-        $query_insert = mysqli_query($conection, "INSERT INTO PRODUCTO
-        (Codigo, Nombre, Descripcion, Precio, Tipo, Disponibilidad)
-            VALUES('$codigo', '$nombre','$descripcion','$precio', '$tipo','$disponibilidad')");
-
+        echo $descripcion;
+        echo $precio;
+        echo $tipo;
+        echo $disponibilidad;
+        $query_insert = mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Producto` (`Codigo`, `Nombre`, `Descripcion`, `Precio`, `Tipo`, `Disponibilidad`, `Foto`) VALUES ('$codigo', '$nombre', '$descripcion', '$precio', '$tipo', '$disponibilidad', 'foto.jpg')");
         if($query_insert){
-            $alert='<p class="msg_save">Proveedor se la come.</p>';
-        }else{
-            $alert='<p class="msg_save">PrError se la come.</p>';
+            echo "BEN";
+        }
+        else{
+            echo "has";
         }
     }
     
@@ -53,7 +51,7 @@ require 'connection.php';
             <hr>
             <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-            <from action="InsertProducto.php" method="post">
+            <form action="InsertProducto.php" method="post">
                 <label for = "Codigo">Codigo</label>
                 <input type = "text" name = "Codigo" placeholder="codigo" required><br>
                 <label for = "Nombre">Nombre</label>
@@ -70,7 +68,7 @@ require 'connection.php';
                 <input type="submit" value="Agregar" name="boton" class="login"> <br><br>
                 
                 <a class="cancelbtn" href="index.php" target="_self">Cancelar</a> <br><br>
-            </from>
+            </form>
         </div>
     
     
