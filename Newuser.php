@@ -43,6 +43,7 @@ require 'connection.php';
                     $mensaje="ERROR: Verifica el formato de los datos";
                 }
                 else{
+                    mysqli_query($conn,);
                     header("location: ../Proyecto-Base-Datos/Login.php");
                 }
             }

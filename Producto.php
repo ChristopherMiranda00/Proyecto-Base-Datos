@@ -1,16 +1,29 @@
 <?php
+session_start();
+$usuario=" ";
+if((isset($_SESSION['username']))){
+    $usuario=$_SESSION['username'];
+}
 require 'connection.php';
 if(empty($_GET['id']))
 {
-    header('Locarion: index.php');
+    header('Location: index.php');
 }
 $id=$_GET['id'];
-$sql=mysqli_query($conn,"select Nombre,Descripcion,Precio,Foto from Producto where Codigo=$id;");
+$sql=mysqli_query($conn,"select Codigo,Nombre,Descripcion,Precio,Foto from Producto where Codigo=$id;");
 $data=mysqli_fetch_array($sql);
 $nombre=$data["Nombre"];
+$codigo=$data["Codigo"];
 $descripcion=$data["Descripcion"];
 $precio=$data["Precio"];
 $foto='Imagenes/'.$data["Foto"];
+if(!empty($_POST)){
+    if(empty($_SESSION['username'])){
+        //echo"fa";
+         header('Location: Login.php');
+    }
+    $van=mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Carrito_has_Producto` (`Cantidad`, `Codigo_Producto`, `Total`, `Usuario_ID_Usuario`) VALUES (1, $codigo, $precio, '$usuario');");  
+}
 
 ?>
 <!DOCTYPE html>
@@ -56,8 +69,12 @@ $foto='Imagenes/'.$data["Foto"];
         <h3>$<?php echo $precio;?> </h3>
         <h3>Opciones de Pago</h3>
         <h2>Tarjeta</h2><hr><br>
-        <a class="Anadir" href="Proyecto.php" target="_self">Añadir a la canasta</a> <br><br>
+        <form method="Post" action="Producto.php?id=<?php echo $id?>">
+        <input type="submit"name="añadir" class="Anadir" value="Añadir">
         <br><br>
+       <a class="back" href="index.php">Volver</a>
+
+            </form>
                 
         </div>
     </div>

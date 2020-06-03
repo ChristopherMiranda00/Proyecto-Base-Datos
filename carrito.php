@@ -1,12 +1,42 @@
 <?php
 session_start();
 $usuario=" ";
+$as=false;
 if((isset($_SESSION['username']))){
     $usuario=$_SESSION['username'];
 }
-else $filtro="'%%'";
+else header("Location: Login.php");
 require 'connection.php';
-$ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
+if(!empty($_POST["salir"])){
+    header("Location: Login.php");
+}
+if(!empty($_POST["pagar"])){
+    $query=mysqli_query($conn,"select * from Tarjeta where Usuario_Tarjeta = '$usuario';");
+    $result=mysqli_num_rows($query);
+    if($result>0){
+        echo "YASTAS";
+        $sentencia=mysqli_query($conn,"select sum(Precio) as Total from Carrito_has_Producto inner join Producto where (Codigo=Codigo_Producto  and Usuario_ID_Usuario ='$usuario');");
+        $data2=mysqli_fetch_array($sentencia);
+        $total=$data2["Total"];
+        $query=mysqli_query($conn,"select Cantidad,Codigo,Nombre,Usuario_ID_Usuario,Precio,Descripcion from Carrito_has_Producto inner join Producto on (Codigo=Codigo_Producto and Usuario_ID_Usuario ='$usuario');");
+        while($carro=mysqli_fetch_array($query)){
+            $cod=$carro["Codigo"];
+            $can=$carro["Cantidad"];
+            $as=mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Producto_has_Venta` (`Codigo_Producto`,  `Num_venta`, `Cantidad`, `Total`, `Codigo_Carrito`) VALUES ($cod, 1, $can,$total,'$usuario');");
+               
+        }
+        if($as){
+            echo "YASTAS";
+                $ne=mysqli_query($conn,"delete from `ProyectoFinal4`.`Carrito_has_Producto` where (Usuario_ID_Usuario = '$usuario');");
+            }
+  
+    }
+    else{
+        header("Location: tarjeta.php");
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
     <html>
@@ -21,7 +51,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
             <tr>
             <td><a class="botonlogo" href="index.php" target="_self">H&B </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
             <td><a class="botoncuenta" href="Login.php" target="_self">Mi Cuenta▾</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td><a class="botoncarrito" href="Carrito.php" target="_self"><img src="Imagenes/Carrito.png" width="45px"> 
+                <td><a class="botoncarrito" href="Carrito.php" target="_self"></a><img src="Imagenes/Carrito.png" width="45px"> </td>
             </tr>
             
         </table>
@@ -47,8 +77,11 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 
             </tr>
     <?php
-        $consulta=mysqli_query($conn,"select Codigo,Nombre,Descripcion,Precio,Disponibilidad,Foto from Producto where Disponibilidad>0 and Tipo like $filtro order by Codigo $ordenar;");
+        $consulta=mysqli_query($conn,"select Cantidad,Codigo,Nombre,Foto,Precio,Descripcion from Carrito_has_Producto inner join Producto on (Codigo=Codigo_Producto and Usuario_ID_Usuario ='$usuario');");
         $result =mysqli_num_rows($consulta);
+        $sentencia=mysqli_query($conn,"select sum(Precio) as Total from Carrito_has_Producto inner join Producto where (Codigo=Codigo_Producto  and Usuario_ID_Usuario ='$usuario');");
+        $data2=mysqli_fetch_array($sentencia);
+        $total=$data2["Total"];
         if($result >0){
             while($data=mysqli_fetch_array($consulta)){
                 if($data["Foto"]!='Imagen_producto.jpg'){
@@ -61,7 +94,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 <td><?php echo $data["Descripcion"]?></td>
                 <td><?php echo $data["Precio"]?></td>
                 <td class="product_img"><img src="<?php echo $foto; ?>" alt="<?php echo $data["Descripcion"]?>"></td>
-                <td><?php echo "num";?></td>
+                <td><?php echo $data["Cantidad"]?></td>
             </tr> 
             <?php
             }
@@ -69,14 +102,15 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
         }
             ?>
         </table>
-
-        <form action="index.php" method="post">
+        <h1>Total: $<?php echo $total;?></h1>
+        <form action="carrito.php" method="post">
             <table align="center"> 
                 <tr>
-                <td><input type="submit" class="return"  value="Regresar"><br><br>   
-                <td><input type="submit" class="login"  value="Pagar"><br><br> 
+                <td><input type="submit" class="return" name="salir"  value="Regresar"><br><br>   
+                <td><input type="submit" class="login" name="pagar"  value="Pagar"><br><br> 
                 </tr>
             </table>
+            
         </form>
     </div><!-- fin contenido-->
 

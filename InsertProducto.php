@@ -18,19 +18,8 @@ require 'connection.php';
         $precio = $_POST['Precio'];
         $tipo = $_POST['Tipo'];
         $disponibilidad = $_POST['Disponibilidad'];
-       echo $codigo;
-       echo $nombre;
-        echo $descripcion;
-        echo $precio;
-        echo $tipo;
-        echo $disponibilidad;
         $query_insert = mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Producto` (`Codigo`, `Nombre`, `Descripcion`, `Precio`, `Tipo`, `Disponibilidad`, `Foto`) VALUES ('$codigo', '$nombre', '$descripcion', '$precio', '$tipo', '$disponibilidad', 'foto.jpg')");
-        if($query_insert){
-            echo "BEN";
-        }
-        else{
-            echo "has";
-        }
+
     }
     
 
