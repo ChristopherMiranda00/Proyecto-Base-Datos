@@ -47,14 +47,7 @@ require 'connection.php';
                 }
             }
             
-            
-            
-            
-            
-            
-        }
-        
-        
+        }  
         
     }
   ?>

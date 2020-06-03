@@ -45,24 +45,27 @@ if(!empty($_POST))
     <body>
     <section id="marco">
         <div id="Info">
-            <h1><i class="far fa-building"></i> Registro Producto<h1>
+            <h1><i class="far fa-building"></i> Registro Usuario<h1>
             <hr>
             <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
 
             <from action=""method="post">
-                <label for = "Codigo">Codigo</label>
-                <input type = "num" name = "Codigo" id="Codigo" placeholder="codigo"><br>
+                <label for = "ID_Usuario">Usuario</label>
+                <input type = "text" name = "ID_Usuario" id="ID_Usuario" placeholder="Usuario"><br>
+                <label for = "Password">Contraseña</label>
+                <input type = "text" name = "Password" id="Password" placeholder="Contraseña"><br>
                 <label for = "Nombre">Nombre</label>
-                <input type = "text" name = "Nombrer" id="Nombre" placeholder="nombre"><br>
-                <label for = "Descripcion">Descripción</label>
-                <input type = "text" name = "Descripcion" id="Descripcion" placeholder="descripción"><br>
-                <label for = "Precio">Precio</label>
-                <input type = "num" name = "Precio" id="Precio" placeholder="precio"><br>
-                <label for = "Tipo">Tipo</label>
-                <input type = "text" name = "Tipo" id="Tipo" placeholder="tipo"><br>
-                <label for = "Disponibilidad">Disponibilidad</label>
-                <input type = "num" name = "Disponibilidad" id="Disponibilidad" placeholder="disponibilidad"><br><br>
-            
+                <input type = "text" name = "Nombrer" id="Nombre" placeholder="Nombre"><br>
+                <label for = "Apellido">Apellido</label>
+                <input type = "text" name = "Apellido" id="Apellido" placeholder="Apellido"><br> 
+                <label for = "Mail">Correo</label>
+                <input type = "text" name = "Mail" id="Mail" placeholder="Correo Electrónico"><br> 
+                <label for="direc"><b>Dirección</b></label>
+                <input type="text" placeholder="Ingrese su Dirección" name="direc" required><br>
+                <label for="telefono"><b>Telefono</b></label>
+                <input type="tel" placeholder="Ingrese Telefono" name="telefono" required><br>
+                <label for="fecha"><b>Fecha de nacimiento</b></label>
+                <input type="text" name="fecha" placeholder="YYYY-MM-DD"><br>
                 
                 <a class="cancelbtn" href="" target="_self">Agregar</a> <br>
 
