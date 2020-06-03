@@ -4,9 +4,6 @@ $usuario=" ";
 if((isset($_SESSION['username']))){
     $usuario=$_SESSION['username'];
 }
-if(isset($_POST['peluches']))$filtro="'Peluche'";
-else if(isset($_POST['flores']))$filtro="'Flores'";
-else if(isset($_POST['dulces']))$filtro="'Golosinas'";
 else $filtro="'%%'";
 require 'connection.php';
 $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
@@ -22,7 +19,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
     <div class="cabecera" >   
         <table align="center"> 
             <tr>
-            <td><a class="botonlogo" href="Proyecto2.php" target="_self">H&B </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+            <td><a class="botonlogo" href="index.php" target="_self">H&B </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
             <td><a class="botoncuenta" href="Login.php" target="_self">Mi Cuenta▾</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td><a class="botoncarrito" href="Carrito.php" target="_self"><img src="Imagenes/Carrito.png" width="45px"> 
             </tr>
@@ -39,7 +36,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
 
     <div id="contenido">  <!-- incio contenido-->      
         <table align="center" class="productostabla" name="Tabla">
-            <tr>
+            <tr >
                 <th >Codigo</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
@@ -59,7 +56,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 }
                 ?>
             <tr class="productostr">
-                <td><?php echo $data["Codigo"]?></td>
+                <td ><?php echo $data["Codigo"]?></td>
                 <td><?php echo $data["Nombre"]?></td>
                 <td><?php echo $data["Descripcion"]?></td>
                 <td><?php echo $data["Precio"]?></td>
@@ -73,7 +70,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
             ?>
         </table>
 
-        <form action="Proyecto2.php" method="post">
+        <form action="index.php" method="post">
             <table align="center"> 
                 <tr>
                 <td><input type="submit" class="return"  value="Regresar"><br><br>   

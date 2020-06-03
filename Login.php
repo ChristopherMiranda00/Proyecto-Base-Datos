@@ -1,7 +1,7 @@
 <?php 
 session_start();
   if (isset($_SESSION['username'])) {
-    header("location: ../Proyecto-Base-Datos/Proyecto.php");
+    header("location: index.php");
   }
 require 'connection.php';
 
@@ -17,7 +17,7 @@ require 'connection.php';
       else{
           
           $_SESSION['username']=$nombre;
-          header("location: ../Proyecto-Base-Datos/Proyecto.php");
+          header("location: index.php");
           
       }
       

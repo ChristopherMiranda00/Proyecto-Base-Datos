@@ -23,7 +23,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
         <table align="center"> 
             <tr>
             <td><a class="botonlogo" href="index.php" target="_self">H&B </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-            <td><a class="botoncuenta" href="Login.php" target="_self">Mi Cuenta▾</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><a class="botoncuenta" href="Cuenta.php" target="_self">Mi Cuenta▾</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><a class="botoncarrito" href="Carrito.php" target="_self"><img src="Imagenes/Carrito.png" width="45px"></a>
             </tr>
             
@@ -58,6 +58,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 <th>Precio MX$</th>
                 <th>Disponibilidad</th>
                 <th>Foto</th>
+                <th>Acciones</th>
                 
             </tr>
     <!--A partir de aqui empieza la tabla-->
@@ -76,7 +77,11 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 <td><?php echo $data["Descripcion"]?></td>
                 <td><?php echo $data["Precio"]?></td>
                 <td><?php echo $data["Disponibilidad"]?></td>
-                <td class="product_img"><img src="<?php echo $foto; ?>" alt="<?php echo $data["Descripcion"]?>"></td>
+                <td class="product_img"><img src="<?php echo $foto; ?>" alt="<?php echo $data["Descripcion"]?>">
+                </td>
+                <td>
+                    <a class="link"  href="Producto.php?id=<?php echo $data["Codigo"]?>">Ver</a>
+                </td>
             </tr> 
             <?php
             }

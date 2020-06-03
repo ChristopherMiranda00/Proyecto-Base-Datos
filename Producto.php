@@ -1,5 +1,17 @@
 <?php
 require 'connection.php';
+if(empty($_GET['id']))
+{
+    header('Locarion: index.php');
+}
+$id=$_GET['id'];
+$sql=mysqli_query($conn,"select Nombre,Descripcion,Precio,Foto from Producto where Codigo=$id;");
+$data=mysqli_fetch_array($sql);
+$nombre=$data["Nombre"];
+$descripcion=$data["Descripcion"];
+$precio=$data["Precio"];
+$foto='Imagenes/'.$data["Foto"];
+
 ?>
 <!DOCTYPE html>
     <html>
@@ -12,21 +24,12 @@ require 'connection.php';
     <div class="cabecera" >   
         <table align="center"> 
             <tr>
-            <td><a class="botonlogo" href="Proyecto.php" target="_self">H&B </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-            <td><a class="botoncuenta" href="Proyecto.php" target="_self">Mi Cuenta▾</a></td>
+            <td><a class="botonlogo" href="index.php" target="_self">H&B </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+            <td><a class="botoncuenta" href="index.php" target="_self">Mi Cuenta▾</a></td>
             </tr>
         </table>
     </div><!-- fincabecera-->
 
-    <div class="menu" >   <!-- incio menu-->
-        <table align="center"> 
-        <tr>
-        <td><a class="botonmenu" href="Peluches.php" target="_self">Peluches▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><a class="botonmenu" href="Flores.php" target="_self">Flores▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><a class="botonmenu" href="Golosinas.php" target="_self">Golosinas▾ </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        </tr>
-        </table>
-    </div><!-- fin menu-->
 
 
     <div id="cuerpo">
@@ -35,40 +38,22 @@ require 'connection.php';
                 <tr>
                     <td>
    
-                <img src="Imagenes/p1.jpg"/>
+                <img  src='<?php echo $foto;?>' alt="FOTO" width="150" height="auto" margin="auto"/>
 
                     </td>
                 </tr>
                 <tr>
                 <td>
                 <h1> Descripción</h1>
-                <?php
-                        $sql= "SELECT * FROM Proyecto.Producto where Codigo = 4";
-                        $result=mysqli_query($conn, $sql);
-
-                        while($mostrar=mysqli_fetch_array($result)){
-                            ?>
-                            <h2><?php echo $mostrar['Descripcion'] ?></h1>
-                        <?php
-                        }   
-                        ?>
+               
+                            <h2><?php echo $descripcion ?></h2>
+                
                     <td>
                 </tr>
             </table>            
         </div>
         <div id="barra-lateral">
-        <?php
-        $sql= "SELECT * FROM Proyecto.Producto where Codigo = 4";
-        $result=mysqli_query($conn, $sql);
-
-        while($mostrar=mysqli_fetch_array($result)){
-          ?>
-        <h1><?php echo $mostrar['Nombre'] ?></h1>
-        <h2><?php echo $mostrar['Codigo'] ?></h2>
-        <h2><?php echo $mostrar['Precio'] ?></h2><hr>
-        <?php
-        }   
-          ?>
+        <h3>$<?php echo $precio;?> </h3>
         <h3>Opciones de Pago</h3>
         <h2>Tarjeta</h2><hr><br>
         <a class="Anadir" href="Proyecto.php" target="_self">Añadir a la canasta</a> <br><br>

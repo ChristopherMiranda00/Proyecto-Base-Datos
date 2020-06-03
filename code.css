@@ -183,7 +183,7 @@ div.cabecera {
     width: 100%;       
 }
 table th{
-    text-align:left;
+    text-align:center;
     padding: 10px;
     background: #1212;
     color:black;
@@ -198,6 +198,21 @@ table th{
     height:auto;
     margin:auto;
     
+}
+.link{
+        font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+.cerrar{
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;  
+    font-weight: 800;
+    font-size: 30px;
+    text-align-last: right;
+    color: rgb(255, 255, 255);
+
 }
 
 

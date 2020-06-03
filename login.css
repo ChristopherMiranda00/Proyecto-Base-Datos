@@ -66,6 +66,21 @@ span.psw {
   float: right;
   padding-top: 16px;
 }
+.loge{
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;  
+    font-weight: 800;
+    font-size: 20px;
+    text-align-last: right;
+    color: red;
+}
+.back{
+  color: red;
+  width: 100px;
+  padding: 10px 18px;
+  text-align: center;
+  float:center;
+}
 
 
 
