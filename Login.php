@@ -42,14 +42,14 @@ require 'connection.php';
     <div id="Info">
         <label for="uname"><b>Usuario</b></label><br>
         <input type="text" placeholder="Ingrese Usuario" id="pass" name="user" required><br>
-
+        
         <label for="psw"><b>Contraseña</b></label><br>
         <input type="password" placeholder="Ingrese contraseña" name="password" required><br>
         <input type="submit" class="login"  value="Login"><br><br>
 
         <a class="cancelbtn" href="Newuser.php" target="_self">Registrarse</a> <br><br>
 
-        <a class="cancelbtn" href="Proyecto2.php" target="_self">Cancel</a> <br><br>
+        <a class="cancelbtn" href="index.php" target="_self">Cancel</a> <br><br>
     </div>
          </form>
     <div id="marco">

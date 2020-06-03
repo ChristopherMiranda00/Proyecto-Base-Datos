@@ -96,7 +96,7 @@ require 'connection.php';
         <input type="password" placeholder="Confirmar contraseña" name="pswconfirm" required><br><br>
         <input type="submit" value="Registrar" class="login"> <br><br>
         
-        <a class="cancelbtn" href="Proyecto2.php" target="_self">Cancelar</a> <br><br>
+        <a class="cancelbtn" href="index.php" target="_self">Cancelar</a> <br><br>
         <?php if (!empty($mensaje)):?>
             <p><?=$mensaje?></p>
         <?php endif;?>

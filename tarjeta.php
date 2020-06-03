@@ -1,5 +1,32 @@
 <?php
-  echo 'hola'; 
+session_start();
+  if (!isset($_SESSION['username'])) {
+    header("location: ../Proyecto-Base-Datos/Newuser.php");
+  }
+  require 'connection.php';
+     if(!empty($_POST['nombre'])){
+       $num =($_POST['num']);
+        $fecha =($_POST['fecha']);
+        $ccv =($_POST['ccv']);
+        $nombre =($_POST['nombre']);
+        $usr=$_SESSION['username'];
+        echo $num;
+         echo" ";
+        echo $fecha ;
+         echo" ";
+        echo $ccv ;
+         echo" ";
+        echo $nombre ;
+         
+         $registro="INSERT INTO `ProyectoFinal4`.`Tarjeta` (`Usuario_Tarjeta`, `No_Tarjeta`, `Nombre_Tarjeta`, `Fecha_Expiracion`, `CVV`) VALUES (? , ?, ?, ?, ?);";
+         
+         $sentencia= mysqli_prepare($conn,$registro);
+         mysqli_stmt_bind_param($sentencia,'sssss',$usr,$num,$nombre,$fecha,$ccv);
+         $pass=mysqli_stmt_execute($sentencia);
+         if($pass){
+              header("location: ../Proyecto-Base-Datos/carrito.php");
+         }
+     }
 ?>
 
 <!DOCTYPE html>
@@ -34,15 +61,17 @@
     </div>
   </div>
   <div class="col2">
+      <form action="tarjeta.php" method="post">
     <label>Número de Tarjeta</label>
-    <input class="number" type="text" ng-model="ncard" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+    <input class="number" type="text" ng-model="ncard" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'name="num" required/>
     <label>Nombre del Titular</label>
-    <input class="inputname" type="text" placeholder=""/>
+    <input class="inputname" type="text" placeholder="" name="nombre" required/>
     <label>Fecha de Expiración</label>
-    <input class="expire" type="text" placeholder="MM / YYYY"/>
+    <input class="expire" type="text" placeholder="MM / YYYY" name="fecha"required/>
     <label>Código de Seguridad</label>
-    <input class="ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
-    <button class="buy"><i class="material-icons">lock</i> Pay --.-- €</button>
+    <input class="ccv" type="text" placeholder="CCV" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'name="ccv"required/>
+    <button type="submit"class="buy"><i class="material-icons">lock</i> Confirmar</button>
+    </form>
   </div>
 </div>
 <!-- partial -->
