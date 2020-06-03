@@ -49,7 +49,7 @@ require 'connection.php';
 
         <a class="cancelbtn" href="Newuser.php" target="_self">Registrarse</a> <br><br>
 
-        <a class="cancelbtn" href="Proyecto.php" target="_self">Cancel</a> <br><br>
+        <a class="cancelbtn" href="Proyecto2.php" target="_self">Cancel</a> <br><br>
     </div>
          </form>
     <div id="marco">

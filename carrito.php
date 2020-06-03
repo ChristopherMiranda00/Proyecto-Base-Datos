@@ -30,36 +30,23 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
         </table>
     </div><!-- fincabecera-->
     
-    <div class="menu" >   <!-- incio menu-->
-        <form action="Proyecto2.php" method="post">
-            <table align="center"> 
-                <tr>
-                    <td><input class="botonmenu" type="submit" name="peluches" value="Peluches▾" onclick=""></td>       
-                    <td><input class="botonmenu" type="submit"  name= "flores" value="Flores▾" onclick=""></td>  
-                    <td><input class="botonmenu" type="submit"  name= "dulces"value="Golosinas▾" onclick=""></td>
-                </tr>
-            </table>
-        </form>
-        
-        
-        
-
-    </div><!-- fin menu-->
 
 
     <div class="anuncio">  <!-- incio anuncio--> 
         <?php echo "<h1>Bienvenido $usuario </h1>";?>
-        <h1><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lista de productos</a></h1>
+        <h1><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Carrito</a></h1>
     </div><!-- fin anuncio-->
-        
+
+    <div id="contenido">  <!-- incio contenido-->      
         <table align="center" class="productostabla" name="Tabla">
             <tr>
                 <th >Codigo</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Precio MX$</th>
-                <th>Disponibilidad</th>
                 <th>Foto</th>
+                <th>Cantidad</th>
+                
                 
             </tr>
     <?php
@@ -76,8 +63,8 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 <td><?php echo $data["Nombre"]?></td>
                 <td><?php echo $data["Descripcion"]?></td>
                 <td><?php echo $data["Precio"]?></td>
-                <td><?php echo $data["Disponibilidad"]?></td>
                 <td class="product_img"><img src="<?php echo $foto; ?>" alt="<?php echo $data["Descripcion"]?>"></td>
+                <td><?php echo "num";?></td>
             </tr> 
             <?php
             }
@@ -86,11 +73,15 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
             ?>
         </table>
 
-    
-        
-
-
-<!-- fin contenido-->
+        <form action="Proyecto2.php" method="post">
+            <table align="center"> 
+                <tr>
+                <td><input type="submit" class="return"  value="Regresar"><br><br>   
+                <td><input type="submit" class="login"  value="Pagar"><br><br> 
+                </tr>
+            </table>
+        </form>
+    </div><!-- fin contenido-->
 
 
     <div class = "casipie"><!-- incio casipie-->
@@ -108,19 +99,19 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¿Cómo comprar?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
-                <td><a class="botoncontacto" href="https://www.facebook.com/" target="_blank">Abraham García </a></td>
-                <td>A01022398@itesm.mx</td>
+                <td><a class="botoncontacto" href="https://www.instagram.com/rojito22/" target="_blank">Abraham García </a></td>
+                <td>A01023256@itesm.mx</td>
                 <td>¿Qué es esto?</td>
                 <td>55-43-92-14-55</td>
             </tr>
             <tr>
-                <td><a class="botoncontacto" href="https://www.facebook.com/" target="_blank">Chistopher Miranda </a></td>
-                <td>A01022398@itesm.mx</td>
+                <td><a class="botoncontacto" href="https://www.instagram.com/chris_mirvan/" target="_blank">Chistopher Miranda </a></td>
+                <td>A01022676@itesm.mx</td>
                 <td>Métodos de Pago</td>
                 <td>Preguntas Frecuentes</td>
             </tr>
             <tr>
-                <td><a class="botoncontacto" href="https://www.facebook.com/" target="_blank">Miguel Hernández </a></td>
+                <td><a class="botoncontacto" href="https://www.instagram.com/miguel77hm/" target="_blank">Miguel Hernández </a></td>
                 <td>A01022398@itesm.mx</td>
                 <td>Dudas y Sugerencias</td>
                 <td></td>
