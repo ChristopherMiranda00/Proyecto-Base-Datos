@@ -9,19 +9,20 @@ require 'connection.php';
 if(!empty($_POST))
 {
     $alert='';
-    if(empty($_POST['Codigo']) || empty($post['Nombre']) || empty($post['Descripcion'])|| empty($post['Precio']) || empty($post['Disponibilidad']))
+    if(empty($_POST['Codigo']) || empty($post['Nombre']) || empty($post['Descripcion'])|| empty($post['Precio']) || empty($post['Tipo'])|| empty($post['Disponibilidad']))
     {
         $alert='<p class = "msg_error">Todos los campos son obligatorios.</p>';
     }else{
         $codigo = $POST['Codigo'];
         $nombre = $POST['Nombre'];
         $descripcion = $POST['Descripcion'];
-        $descripcion = $POST['Precio'];
+        $precio = $POST['Precio'];
+        $tipo = $POST['Tipo'];
         $disponibilidad = $POST['Disponibilidad'];
 
         $query_insert = mysqli_query($conection, "INSERT INTO producto(
-            Codigo, Nombre, Descripcion, Precio, Disponibilidad)
-            VALUES('$codigo', '$nombre','$descripcion','$descripcion','$disponibilidad')");
+            Codigo, Nombre, Descripcion, Precio, Tipo, Disponibilidad)
+            VALUES('$codigo', '$nombre','$descripcion','$precio', '$tipo','$disponibilidad')");
 
         if($query_insert){
             $alert='<p class="msg_save">Proveedor se la come.</p>';
@@ -57,6 +58,8 @@ if(!empty($_POST))
                 <input type = "text" name = "Descripcion" id="Descripcion" placeholder="descripción"><br>
                 <label for = "Precio">Precio</label>
                 <input type = "num" name = "Precio" id="Precio" placeholder="precio"><br>
+                <label for = "Tipo">Tipo</label>
+                <input type = "text" name = "Tipo" id="Tipo" placeholder="tipo"><br>
                 <label for = "Disponibilidad">Disponibilidad</label>
                 <input type = "num" name = "Disponibilidad" id="Disponibilidad" placeholder="disponibilidad"><br><br>
             
