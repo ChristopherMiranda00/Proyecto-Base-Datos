@@ -1,8 +1,8 @@
 <?php
         // Datos para conectar a la base de datos.
-        $nombreServidor = "127.0.0.1";
+        $nombreServidor = "127.0.0.1:3308";
         $nombreUsuario = "adminBD";
-        $passwordBaseDeDatos = "guardias5522";
+        $passwordBaseDeDatos = "rojo";
         $nombreBaseDeDatos = "ProyectoFinal4";
         // Crear conexión con la base de datos.
         $conn =new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
