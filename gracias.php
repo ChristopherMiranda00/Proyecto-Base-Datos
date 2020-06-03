@@ -22,7 +22,7 @@ require 'connection.php';
 
     <div id="cuerpo">
     <p> 
-<img src="Imagebes/gracias.jpg" align="left">
+<img src="Imagenes/gracias.jpg" align="left">
 </p>
     </div>
     <div class = "casipie"><!-- incio casipie-->
