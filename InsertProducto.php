@@ -19,7 +19,6 @@ require 'connection.php';
         $tipo = $_POST['Tipo'];
         $disponibilidad = $_POST['Disponibilidad'];
         $query_insert = mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Producto` (`Codigo`, `Nombre`, `Descripcion`, `Precio`, `Tipo`, `Disponibilidad`, `Foto`) VALUES ('$codigo', '$nombre', '$descripcion', '$precio', '$tipo', '$disponibilidad', 'foto.jpg')");
-
     }
     
 

@@ -33,7 +33,7 @@ require 'connection.php';
 <body> 
 <div id="marco">
     <div id="tituloimagen">
-        <img src="Imagenes/Fondo.jpg" alt="Avatar" class="avatar">
+        <img src="Imagenes/HyB.png" alt="Avatar" class="avatar">
     </div>
     <?php if (!empty($mensaje)):?>
     <p><?=$mensaje?></p>

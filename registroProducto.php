@@ -16,11 +16,11 @@ require 'connection.php';
     <form name="Cancelar" action="Login.php" method="post">
         <div id="Info">
             <label for="uname"><b>Registrar</b></label><br>
-            <a class="btn" href="InsertProducto.php">Usuario</a><br><br>
+            <a class="btn" href="InsertProducto.php">Producto</a><br><br>
             <!-- <a href="index.php" type="submit" class="login"  value="Usuario"></a> -->
 
             <label for="psw"><b>Registrar</b></label><br>
-            <a class="btn" href="InsertUsuario.php">Producto</a><br><br>
+            <a class="btn" href="InsertUsuario.php">Usuario</a><br><br>
             <input type="submit" class="login"  value="Cancelar"><br><br>
 
         </div>

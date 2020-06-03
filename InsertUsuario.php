@@ -6,32 +6,28 @@ if((isset($_SESSION['username']))){
 }
 require 'connection.php';
 
-if(!empty($_POST))
-{
-    $alert='';
-    if(empty($_POST['Codigo']) || empty($post['Nombre']) || empty($post['Descripcion'])|| empty($post['Precio']) || empty($post['Tipo'])|| empty($post['Disponibilidad']))
-    {
+    if(empty($_POST["user"])){
         $alert='<p class = "msg_error">Todos los campos son obligatorios.</p>';
     }else{
-        $codigo = $POST['Codigo'];
-        $nombre = $POST['Nombre'];
-        $descripcion = $POST['Descripcion'];
-        $precio = $POST['Precio'];
-        $tipo = $POST['Tipo'];
-        $disponibilidad = $POST['Disponibilidad'];
+        $alert='<p class = "msg_error">BIEN.</p>';
 
-        $query_insert = mysqli_query($conection, "INSERT INTO PRODUCTO
-        (Codigo, Nombre, Descripcion, Precio, Tipo, Disponibilidad)
-            VALUES('$codigo', '$nombre','$descripcion','$precio', '$tipo','$disponibilidad')");
+        $idUsuario = $_POST['user'];
+        $password = $_POST['pass'];
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apel'];
+        $mail = $_POST['mail'];
+        $direc = $_POST['direc'];
+        $tel = $_POST['tel'];
+        $fecha = $_POST['fecha'];
 
+        $query_insert = mysqli_query($conn,"INSERT INTO `ProyectoFinal4`.`Usuario` (`ID_Usuario`, `Password`, `Nombre`, `Apellido`, `Mail`,`Direccion`, `Telefono`, `Fecha_nacimiento`,`Puesto`,`Admin`) VALUES ('$idUsuario ', '$password', '$nombre', '$apellido', '$mail', '$direc', '$tel','$fecha','TI',0)");
         if($query_insert){
-            $alert='<p class="msg_save">Proveedor se la come.</p>';
-        }else{
-            $alert='<p class="msg_save">PrError se la come.</p>';
+            echo "BEN";
+        }
+        else{
+            echo "has";
         }
     }
-    mysqli_close($conection);
-}
 
 ?>
 
@@ -49,28 +45,28 @@ if(!empty($_POST))
             <hr>
             <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-            <from action=""method="post">
+            <form action="InsertUsuario.php" method="post">
                 <label for = "ID_Usuario">Usuario</label>
-                <input type = "text" name = "ID_Usuario" id="ID_Usuario" placeholder="Usuario"><br>
+                <input type = "text" name = "user" placeholder="Usuario" required><br>
                 <label for = "Password">Contraseña</label>
-                <input type = "text" name = "Password" id="Password" placeholder="Contraseña"><br>
+                <input type = "text" name = "pass" placeholder="Contraseña" required><br>
                 <label for = "Nombre">Nombre</label>
-                <input type = "text" name = "Nombrer" id="Nombre" placeholder="Nombre"><br>
+                <input type = "text" name = "nombre" placeholder="Nombre" required><br>
                 <label for = "Apellido">Apellido</label>
-                <input type = "text" name = "Apellido" id="Apellido" placeholder="Apellido"><br> 
+                <input type = "text" name = "apel" placeholder="Apellido" required><br> 
                 <label for = "Mail">Correo</label>
-                <input type = "text" name = "Mail" id="Mail" placeholder="Correo Electrónico"><br> 
-                <label for="direc"><b>Dirección</b></label>
+                <input type = "text" name = "mail" placeholder="Correo Electrónico" required><br> 
+                <label for="Direc"><b>Dirección</b></label>
                 <input type="text" placeholder="Ingrese su Dirección" name="direc" required><br>
-                <label for="telefono"><b>Telefono</b></label>
-                <input type="tel" placeholder="Ingrese Telefono" name="telefono" required><br>
-                <label for="fecha"><b>Fecha de nacimiento</b></label>
-                <input type="text" name="fecha" placeholder="YYYY-MM-DD"><br>
+                <label for="Telefono"><b>Telefono</b></label>
+                <input type="tel" placeholder="Ingrese Telefono" name="tel" required><br>
+                <label for="Fecha"><b>Fecha de nacimiento</b></label>
+                <input type="text" name="fecha" placeholder="YYYY-MM-DD"required><br>
                 
-                <a class="cancelbtn" href="" target="_self">Agregar</a> <br>
-
+                <input type="submit" value="Agregar" name="boton" class="login"> <br><br>
+                
                 <a class="cancelbtn" href="index.php" target="_self">Cancelar</a> <br><br>
-            </from>
+            </form>
         </div>
     
     
