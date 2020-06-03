@@ -71,7 +71,7 @@ require 'connection.php';
         <input type="text" placeholder="Ingrese Nombre" name="nombre" required><br>
 
         <label for="apellido"><b>Apellido</b></label>
-        <input type="password" placeholder="Ingrese Apellido" name="apellido" required><br>
+        <input type="text" placeholder="Ingrese Apellido" name="apellido" required><br>
 
         <label for="mail"><b>Mail</b></label>
         <input type="email" placeholder="Ingrese Mail" name="mail" required><br>
@@ -96,7 +96,7 @@ require 'connection.php';
         <input type="password" placeholder="Confirmar contraseña" name="pswconfirm" required><br><br>
         <input type="submit" value="Registrar" class="login"> <br><br>
         
-        <a class="cancelbtn" href="Proyecto.php" target="_self">Cancelar</a> <br><br>
+        <a class="cancelbtn" href="Proyecto2.php" target="_self">Cancelar</a> <br><br>
         <?php if (!empty($mensaje)):?>
             <p><?=$mensaje?></p>
         <?php endif;?>
