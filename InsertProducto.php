@@ -6,19 +6,23 @@ if((isset($_SESSION['username']))){
 }
 require 'connection.php';
 
-if(!empty($_POST))
-{
-    $alert='';
-    if(empty($_POST['Codigo']) || empty($post['Nombre']) || empty($post['Descripcion'])|| empty($post['Precio']) || empty($post['Tipo'])|| empty($post['Disponibilidad']))
-    {
+
+    if(empty($_POST["Codigo"]){
         $alert='<p class = "msg_error">Todos los campos son obligatorios.</p>';
     }else{
-        $codigo = $POST['Codigo'];
-        $nombre = $POST['Nombre'];
-        $descripcion = $POST['Descripcion'];
-        $precio = $POST['Precio'];
-        $tipo = $POST['Tipo'];
-        $disponibilidad = $POST['Disponibilidad'];
+        $alert='<p class = "msg_error">BIEN.</p>';
+        
+        $codigo = $_POST['Codigo'];
+        $nombre = $_POST['Nombre'];
+        $descripcion = $_POST['Descripcion'];
+        $precio = $_POST['Precio'];
+        $tipo = $_POST['Tipo'];
+        $disponibilidad = $_POST['Disponibilidad'];
+       echo $codigo;
+       echo $nombre;
+       
+    
+
 
         $query_insert = mysqli_query($conection, "INSERT INTO PRODUCTO
         (Codigo, Nombre, Descripcion, Precio, Tipo, Disponibilidad)
@@ -30,8 +34,8 @@ if(!empty($_POST))
             $alert='<p class="msg_save">PrError se la come.</p>';
         }
     }
-    mysqli_close($conection);
-}
+    
+
 
 ?>
 
@@ -49,23 +53,22 @@ if(!empty($_POST))
             <hr>
             <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-            <from action=""method="post">
+            <from action="InsertProducto.php" method="post">
                 <label for = "Codigo">Codigo</label>
-                <input type = "num" name = "Codigo" id="Codigo" placeholder="codigo"><br>
+                <input type = "text" name = "Codigo" placeholder="codigo" required><br>
                 <label for = "Nombre">Nombre</label>
-                <input type = "text" name = "Nombrer" id="Nombre" placeholder="nombre"><br>
+                <input type = "text" name = "Nombre" placeholder="nombre"required><br>
                 <label for = "Descripcion">Descripción</label>
-                <input type = "text" name = "Descripcion" id="Descripcion" placeholder="descripción"><br>
+                <input type = "text" name = "Descripcion" placeholder="descripción"required><br>
                 <label for = "Precio">Precio</label>
-                <input type = "num" name = "Precio" id="Precio" placeholder="precio"><br>
+                <input type = "text" name = "Precio" placeholder="precio"required><br>
                 <label for = "Tipo">Tipo</label>
-                <input type = "text" name = "Tipo" id="Tipo" placeholder="tipo"><br>
+                <input type = "text" name = "Tipo" placeholder="tipo"required><br>
                 <label for = "Disponibilidad">Disponibilidad</label>
-                <input type = "num" name = "Disponibilidad" id="Disponibilidad" placeholder="disponibilidad"><br><br>
-            
+                <input type = "text" name = "Disponibilidad" placeholder="disponibilid"required><br><br>
                 
-                <a class="cancelbtn" href="" target="_self">Agregar</a> <br>
-
+                <input type="submit" value="Agregar" name="boton" class="login"> <br><br>
+                
                 <a class="cancelbtn" href="index.php" target="_self">Cancelar</a> <br><br>
             </from>
         </div>
