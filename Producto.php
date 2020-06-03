@@ -43,7 +43,7 @@ require 'connection.php';
                 <td>
                 <h1> Descripción</h1>
                 <?php
-                        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+                        $sql= "SELECT * FROM Proyecto.Producto where Codigo = 4";
                         $result=mysqli_query($conn, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -58,7 +58,7 @@ require 'connection.php';
         </div>
         <div id="barra-lateral">
         <?php
-        $sql= "SELECT * FROM Proyecto.producto where Codigo = 4";
+        $sql= "SELECT * FROM Proyecto.Producto where Codigo = 4";
         $result=mysqli_query($conn, $sql);
 
         while($mostrar=mysqli_fetch_array($result)){

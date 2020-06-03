@@ -62,6 +62,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
                 <th>Foto</th>
                 
             </tr>
+    <!--A partir de aqui empieza la tabla-->
     <?php
         $consulta=mysqli_query($conn,"select Codigo,Nombre,Descripcion,Precio,Disponibilidad,Foto from Producto where Disponibilidad>0 and Tipo like $filtro order by Codigo $ordenar;");
         $result =mysqli_num_rows($consulta);
@@ -87,7 +88,7 @@ $ordenar="asc"; //VARIABLE QUE SE VA A CAMBIAR PARA ORDENAR LOS ELEMENTOS
         </table>
 
     
-        
+         <!--A partir de aqui empieza la tabla-->
 
 
 <!-- fin contenido-->
